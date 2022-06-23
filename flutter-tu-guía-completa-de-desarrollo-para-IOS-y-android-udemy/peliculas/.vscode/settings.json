@@ -1,0 +1,7 @@
+{
+    "vim.textwidth": 1,
+    "editor.minimap.maxColumn": 80,
+    "editor.renderLineHighlightOnlyWhenFocus": false,
+    "editor.renderLineHighlight": "all",
+    "editor.unicodeHighlight.nonBasicASCII": "inUntrustedWorkspace"
+}
