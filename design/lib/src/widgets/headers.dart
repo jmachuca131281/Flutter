@@ -163,7 +163,6 @@ class _HeaderPicoPainter extends CustomPainter {
 }
 
 
-
 class HeaderCurvo extends StatelessWidget {
 
   @override
