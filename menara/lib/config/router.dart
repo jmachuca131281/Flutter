@@ -1,8 +1,11 @@
 import 'package:go_router/go_router.dart';
-import 'package:menara/screens/beauty_screen.dart';
-import 'package:menara/screens/home_screen.dart';
-import 'package:menara/screens/pets_screen.dart';
-import 'package:menara/screens/products_screen.dart';
+
+import 'package:menara/presentation/screens/beauty_screen.dart';
+import 'package:menara/presentation/screens/pets_screen.dart';
+import 'package:menara/presentation/screens/products_screen.dart';
+import 'package:menara/presentation/screens/home_screen.dart';
+import 'package:menara/presentation/screens/shopping_cart_screen.dart';
+// import 'package:menara/widgets/bottom_navigation_bar.dart';
 
 final app = GoRouter(
   routes: [
@@ -25,6 +28,11 @@ final app = GoRouter(
       path: '/pets',
       name: 'pets',
       builder: (context, status) => const PetsScreen(),
+    ),
+    GoRoute(
+      path: '/shopping',
+      name: 'shopping',
+      builder: (context, status) => ShoppingCartScreen(),
     ),
   ],
 );

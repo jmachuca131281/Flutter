@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:menara/models/product.dart';
-import 'package:menara/widgets/bottom_navigation_bar.dart';
 
 class HomeScreen extends StatelessWidget {
-
   final List<HomeProduct> homeProducts = [
     HomeProduct(
       description: 'Product 1',
@@ -35,7 +34,20 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home Products'),
+        title: const Text('Home Products'),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: ()=> context.go('/'),
+        ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 10),
+            child: IconButton(
+              icon: const Icon(Icons.shopping_cart),
+              onPressed: () => context.go('/shopping'),
+            ),
+          )
+        ],
       ),
       body: ListView.builder(
         itemCount: homeProducts.length,
@@ -55,7 +67,8 @@ class HomeScreen extends StatelessWidget {
                 ),
                 Padding(
                   padding: EdgeInsets.all(8.0),
-                  child: Text('Price: \$${product.price.toStringAsFixed(2)} per ${product.unit}'),
+                  child: Text(
+                      'Price: \$${product.price.toStringAsFixed(2)} per ${product.unit}'),
                 ),
                 Padding(
                   padding: EdgeInsets.all(8.0),
